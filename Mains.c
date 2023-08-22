@@ -5,10 +5,11 @@ swervo_t monty = {NULL, 0};
 int main(int argc, char **argv)
 {
 	FILE *file;
-/*	int count = 0;*/
+	unsigned int count = 0;
 	ssize_t reads = 1;
 	size_t index = 0;
 	char *store = NULL;
+	stack_t *head;
 
 	if (argc != 2)
 	{
@@ -25,10 +26,17 @@ int main(int argc, char **argv)
 	while (reads > 0)
 	{
 		reads = getline(&store, &index, file);
-	/*	printf("%s", store);*/
+		count++;
+		if (reads > 0)
+		{
+			if (handler(store) == -1)
+			{
+				fclose(file);
+				free(store);
+				exit(EXIT_FAILURE);
+			}
+		free(store);
 	}
-
-	free(store);
 	fclose(file);
 
 	return (0);

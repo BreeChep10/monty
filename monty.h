@@ -44,9 +44,13 @@ typedef struct instruction_s
 typedef struct swervo_s
 {
 	char *tink;
+	char *first;
+	char *second;
 	int mode;
 } swervo_t;
 
 extern swervo_t monty;
+
+int handler(char *store, FILE *file, unsigned int count);
 
 #endif /*BREE<$$>LEE*/
