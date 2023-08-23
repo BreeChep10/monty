@@ -7,7 +7,7 @@ void monty_mul(stack_t **head, unsigned int line_number)
 
 	if (!*head || !(*head)->next)
 	{
-		fprintf(stderr, "L%d: can't mul, stack too short", line_number);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 		fclose(monty.file);
 		free(monty.Getline);
 		free_stack_t(*head);
