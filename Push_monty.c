@@ -3,6 +3,10 @@
 void monty_push(stack_t **stack, unsigned int line_number)
 {
 	int value;
+	char *string = monty.second;
+	int j = 0;
+	int flag = 0;
+
 
 	if (!monty.second)
 	{
@@ -12,15 +16,25 @@ void monty_push(stack_t **stack, unsigned int line_number)
 		fclose(monty.file);
 		exit(EXIT_FAILURE);
 	}
-	check_second();
+
+	if (string[0] == '-')
+			j++;
+	for (j = 0; string[j]; j++)
+	{
+		if (string[j] > 57 || string[j] < 48)
+			flag = 1;
+	}
+
+	if (flag == 1)
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", monty.count);
+		fclose(monty.file);
+		free(monty.Getline);
+		free_stack_t(*(monty.head));
+		exit(EXIT_FAILURE);
+	}
+
 	value = atoi(monty.second);
 	*stack = add_dnodeint(stack, value);
 
-/*	new_node->n = value;
-	new_node->next = *stack;
-	new_node->prev = NULL;
-
-	if (*stack != NULL)
-		(*stack)->prev = new_node;
-		*stack = new_node;*/
 }
