@@ -31,7 +31,6 @@ int main(int argc, char **argv)
 		{
 			handler(store, file, count);
 		}
-		free(store);
 	}
 	free(store);
 	fclose(file);

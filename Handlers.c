@@ -7,6 +7,7 @@ int handler(char *statement, FILE *file, unsigned int count)
 	stack_t *head;
 	char *command;
 
+	head = NULL;
 	command = strtok(statement, " \n\t");
 	if (command && command[0] == '#')
 	{
@@ -62,6 +63,7 @@ int execute(stack_t **head, unsigned int count)
 		if (strcmp(monty.first, opst[i].opcode) == 0)
 		{
 			opst[i].f(head, count);
+			if (*head)
 			return (0);
 		}
 	}
@@ -77,6 +79,11 @@ int execute(stack_t **head, unsigned int count)
 void free_stack_t(stack_t *head)
 {
 	stack_t *current;
+
+	if (!head)
+	{
+		return;
+	}
 
 	while (head)
 	{

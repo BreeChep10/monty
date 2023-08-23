@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void push_monty(stack_t **stack, unsigned int line_number)
+void monty_push(stack_t **stack, unsigned int line_number)
 {
 	int value;
 	stack_t *new_node = malloc(sizeof(stack_t));
@@ -13,7 +13,7 @@ void push_monty(stack_t **stack, unsigned int line_number)
 	}
 	if (!monty.first)
 	{
-		fprintf(stderr, "L<line_number>: usage: push integer\n", line_number);
+		fprintf(stderr, "L<%d>: usage: push integer\n", line_number);
 		free_stack_t(*stack);
 		exit(EXIT_FAILURE);
 	}
