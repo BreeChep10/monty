@@ -63,6 +63,7 @@ stack_t *add_dnodeint_end(stack_t **head, const int n);
 void monty_pall(stack_t **stack, unsigned int l __attribute__((unused)));
 void monty_push(stack_t **head, unsigned int line_number);
 void monty_pint(stack_t **head, unsigned int line_number);
+void monty_pop(stack_t **head, unsigned int line_number);
 void check_second(void);
 
 

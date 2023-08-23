@@ -7,6 +7,7 @@ int handler(char *statement, FILE *file, unsigned int count, stack_t **head)
 		{"push", monty_push},
 		{"pall", monty_pall},
 		{"pint", monty_pint},
+		{"pop", monty_pop},
 		{NULL, NULL}
 	};
 
@@ -52,6 +53,7 @@ int execute(stack_t **head, unsigned int count)
 		{"push", monty_push},
 		{"pall", monty_pall},
 		{"pint", monty_pint},
+		{"pop", monty_pop},
 		{NULL, NULL}
 	};
 	/*

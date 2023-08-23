@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		fprintf(stderr, "L<line_number>: usage: push integer\n");
+		fprintf(stderr, "L%d: usage: push integer\n", count);
 		exit(EXIT_FAILURE);
 	}
 
