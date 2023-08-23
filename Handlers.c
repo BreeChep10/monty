@@ -6,6 +6,7 @@ int handler(char *statement, FILE *file, unsigned int count, stack_t **head)
 	instruction_t opst[] = {
 		{"push", monty_push},
 		{"pall", monty_pall},
+		{"pint", monty_pint},
 		{NULL, NULL}
 	};
 
@@ -33,7 +34,7 @@ int handler(char *statement, FILE *file, unsigned int count, stack_t **head)
 
 	if (command && opst[i].opcode == NULL)
 	{
-		fprintf(stderr, "L%d: unknown instruction %s", count, command);
+		fprintf(stderr, "L%d: unknown instruction %s\n", count, command);
 		fclose(file);
 		free(statement);
 		free_stack_t(*head);
@@ -50,6 +51,7 @@ int execute(stack_t **head, unsigned int count)
 	instruction_t opst[] = {
 		{"push", monty_push},
 		{"pall", monty_pall},
+		{"pint", monty_pint},
 		{NULL, NULL}
 	};
 	/*
