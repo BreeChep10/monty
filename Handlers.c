@@ -9,6 +9,7 @@ int handler(char *statement, FILE *file, unsigned int count, stack_t **head)
 		{"pint", monty_pint},
 		{"pop", monty_pop},
 		{"swap", monty_swap},
+		{"add", monty_add},
 		{NULL, NULL}
 	};
 
