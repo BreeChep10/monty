@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", count);
+		fprintf(stderr, "L%d: usage: push integer\n", monty.count);
 		exit(EXIT_FAILURE);
 	}
 
