@@ -12,10 +12,8 @@ void monty_swap(stack_t **head, unsigned int line_number)
 		free_stack_t(*head);
 		exit(EXIT_FAILURE);
 	}
-	else
-	{
-		current = (*head)->n;
-		(*head)->n = (*head)->next->n;
-		(*head)->next->n = current;
-	}
+
+	current = (*head)->n;
+	(*head)->n = (*head)->next->n;
+	(*head)->next->n = current;
 }
