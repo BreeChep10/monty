@@ -5,18 +5,25 @@ int handler(char *statement, FILE *file, unsigned int count)
 {
 
 	stack_t *head;
-	char *command, char *data;
+	char *command, *data;
 
 	command = strtok(statement, " \n\t");
-
 	if (command && command[0] == '#')
 	{
 		return (0);
 	}
+	monty.head = &head;
+	monty.first = command;
+	monty.second = strtok(NULL, " \n\t");
 
-	swervo_t.second = strtok(NULL, " \n\t");
-
-	
+	if (execute(&head, count) == -1)
+	{
+		fclose(file);
+		free(statement);
+		free_stack_t(head);
+		exit(EXIT_FAILURE);
+	}
+	return (0);
 }
 
 
@@ -45,4 +52,43 @@ int execute(stack_t **head, unsigned int count)
 		{NULL, NULL}
 	};
 
-	int i = 0
+	int i;
+
+	for (i = 0; opst[i].opcode; i++)
+	{
+		if (strcmp(monty.first, opst[i].opcode) == 0)
+		{
+			opst[i].f(head, count);
+			return (0);
+		}
+	}
+
+	if (opst[i].opcode == NULL)
+	{
+		return (-1);
+	}
+	return (0);
+}
+
+
+void free_stack_t(stack_t *head)
+{
+	stack_t *h, *next;
+
+	if (head)
+	{
+		h = head;
+
+		while (h->prev)
+		{
+			h = h->prev;
+		}
+
+		while (next)
+		{
+			next = h->next;
+			free(h);
+			h = next;
+		}
+	}
+}

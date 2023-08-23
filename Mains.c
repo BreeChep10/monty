@@ -1,6 +1,6 @@
 #include "monty.h"
 
-swervo_t monty = {NULL, 0};
+swervo_t monty = {NULL, NULL, NULL, 0, NULL};
 
 int main(int argc, char **argv)
 {
@@ -29,14 +29,15 @@ int main(int argc, char **argv)
 		count++;
 		if (reads > 0)
 		{
-			if (handler(store) == -1)
+			if (handler(store, file, count) == -1)
 			{
 				fclose(file);
 				free(store);
 				exit(EXIT_FAILURE);
 			}
-		free(store);
+		}
 	}
+	free(store);
 	fclose(file);
 
 	return (0);
