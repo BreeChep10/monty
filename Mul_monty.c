@@ -15,7 +15,6 @@ void monty_mul(stack_t **head, unsigned int line_number)
 	}
 	mul = (*head)->n * (*head)->next->n;
 	(*head)->next->n = mul;
-	(*head)->prev = NULL;
 	*head = (*head)->next;
 	free(current);
 }
