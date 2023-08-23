@@ -5,7 +5,7 @@ int handler(char *statement, FILE *file, unsigned int count)
 {
 
 	stack_t *head;
-	char *command, *data;
+	char *command;
 
 	command = strtok(statement, " \n\t");
 	if (command && command[0] == '#')
@@ -32,7 +32,7 @@ int handler(char *statement, FILE *file, unsigned int count)
 int execute(stack_t **head, unsigned int count)
 {
 	instruction_t opst[] = {
-		{"push", f_push},
+	/*	{"push", f_push},
 		{"pall", f_pall},
 		{"pint", f_pint},
 		{"pop", f_pop},
@@ -48,7 +48,7 @@ int execute(stack_t **head, unsigned int count)
 		{"rotl", f_rotl},
 		{"rotr", f_rotr},
 		{"queue", f_queue},
-		{"stack", f_stack},
+		{"stack", f_stack}*/
 		{NULL, NULL}
 	};
 
@@ -73,6 +73,16 @@ int execute(stack_t **head, unsigned int count)
 
 void free_stack_t(stack_t *head)
 {
+	stack_t *current;
+
+	while (head)
+	{
+		current = head;
+		head = head->next;
+		free(current);
+	}
+}
+/*{
 	stack_t *h, *next;
 
 	if (head)
@@ -91,4 +101,4 @@ void free_stack_t(stack_t *head)
 			h = next;
 		}
 	}
-}
+}*/

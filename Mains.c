@@ -9,7 +9,7 @@ int main(int argc, char **argv)
 	ssize_t reads = 1;
 	size_t index = 0;
 	char *store = NULL;
-	stack_t *head;
+	stack_t *head = NULL;
 
 	if (argc != 2)
 	{
@@ -33,12 +33,13 @@ int main(int argc, char **argv)
 			{
 				fclose(file);
 				free(store);
+			/*	free_stack_t(head);*/
 				exit(EXIT_FAILURE);
 			}
 		}
 	}
 	free(store);
 	fclose(file);
-
+	free_stack_t(head);
 	return (0);
 }

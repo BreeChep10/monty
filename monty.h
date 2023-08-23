@@ -54,7 +54,7 @@ extern swervo_t monty;
 
 int handler(char *store, FILE *file, unsigned int count);
 int execute(stack_t **head, unsigned int count);
-void free_stack_t(stack_t *head)
+void free_stack_t(stack_t *head);
 
 
 
