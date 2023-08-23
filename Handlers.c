@@ -93,3 +93,29 @@ void free_stack_t(stack_t *head)
 		free(current);
 	}
 }
+
+
+
+void check_second(void)
+{
+	char *string = monty.second;
+	int j = 0;
+	int flag;
+
+	if (string[0] == '-')
+			j++;
+	for (j = 0; string[j]; j++)
+	{
+		if (string[j] > 57 || string[j] < 48)
+			flag = 1;
+	}
+
+	if (flag == 1)
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", monty.count);
+		fclose(monty.file);
+		free(monty.Getline);
+		free_stack_t(*(monty.head));
+		exit(EXIT_FAILURE);
+	}
+}

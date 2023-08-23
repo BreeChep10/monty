@@ -1,7 +1,7 @@
 #include "monty.h"
 #include <stdio.h>
 
-swervo_t monty = {NULL, NULL, NULL, 0, NULL, NULL, NULL};
+swervo_t monty = {NULL, NULL, NULL, 0, 0, NULL, NULL, NULL};
 
 int main(int argc, char **argv)
 {
@@ -29,6 +29,7 @@ int main(int argc, char **argv)
 		reads = getline(&store, &index, file);
 		monty.Getline = store;
 		count++;
+		monty.count = count;
 		if (reads > 0)
 		{
 			handler(store, file, count);

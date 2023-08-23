@@ -19,6 +19,7 @@ void monty_push(stack_t **stack, unsigned int line_number)
 		fclose(monty.file);
 		exit(EXIT_FAILURE);
 	}
+	check_second();
 	value = atoi(monty.second);
 
 	new_node->n = value;
