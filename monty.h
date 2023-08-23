@@ -48,6 +48,8 @@ typedef struct swervo_s
 	char *second;
 	int mode;
 	stack_t **head;
+	FILE *file;
+	char *Getline;
 } swervo_t;
 
 extern swervo_t monty;

@@ -1,7 +1,7 @@
 #include "monty.h"
 #include <stdio.h>
 
-swervo_t monty = {NULL, NULL, NULL, 0, NULL};
+swervo_t monty = {NULL, NULL, NULL, 0, NULL, NULL, NULL};
 
 int main(int argc, char **argv)
 {
@@ -18,6 +18,7 @@ int main(int argc, char **argv)
 	}
 
 	file = fopen(argv[1], "r");
+	monty.file = file;
 	if (file == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file <file>\n");
@@ -26,6 +27,7 @@ int main(int argc, char **argv)
 	while (reads > 0)
 	{
 		reads = getline(&store, &index, file);
+		monty.Getline = store;
 		count++;
 		if (reads > 0)
 		{

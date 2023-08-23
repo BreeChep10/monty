@@ -11,10 +11,12 @@ void monty_push(stack_t **stack, unsigned int line_number)
 		free_stack_t(*stack);
 		exit(EXIT_FAILURE);
 	}
-	if (!monty.first)
+	if (!monty.second)
 	{
-		fprintf(stderr, "L<%d>: usage: push integer\n", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free_stack_t(*stack);
+		free(monty.Getline);
+		fclose(monty.file);
 		exit(EXIT_FAILURE);
 	}
 	value = atoi(monty.second);
