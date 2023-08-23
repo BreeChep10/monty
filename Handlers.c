@@ -17,6 +17,7 @@ int handler(char *statement, FILE *file, unsigned int count, stack_t **head)
 
 	if (execute(head, count) == -1)
 	{
+		fprintf(stderr, "L%d: unknown instruction %s", count, command);
 		fclose(file);
 		free(statement);
 		free_stack_t(*head);
