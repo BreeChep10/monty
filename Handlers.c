@@ -26,13 +26,12 @@ int handler(char *statement, FILE *file, unsigned int count, stack_t **head)
 		if (strcmp(command, opst[i].opcode) == 0)
 		{
 			opst[i].f(head, count);
-			if (*head)
-				return (0);
+			return (0);
 		}
 		i++;
 	}
 
-	if (opst[i].opcode == NULL)
+	if (command && opst[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s", count, command);
 		fclose(file);

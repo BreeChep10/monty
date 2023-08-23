@@ -38,7 +38,6 @@ int main(int argc, char **argv)
 		}
 		free(store);
 	}
-/*	free(store);*/
 	fclose(file);
 	free_stack_t(*(monty.head));
 	return (0);
