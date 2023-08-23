@@ -34,6 +34,7 @@ int execute(stack_t **head, unsigned int count)
 {
 	instruction_t opst[] = {
 		{"push", monty_push},
+		{"pall", monty_pall},
 		{NULL, NULL}
 	};
 	/*
@@ -64,7 +65,7 @@ int execute(stack_t **head, unsigned int count)
 		{
 			opst[i].f(head, count);
 			if (*head)
-			return (0);
+				return (0);
 		}
 	}
 
