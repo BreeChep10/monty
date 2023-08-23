@@ -11,6 +11,7 @@ int handler(char *statement, FILE *file, unsigned int count, stack_t **head)
 		{"swap", monty_swap},
 		{"add", monty_add},
 		{"nop", monty_nop},
+		{"div", monty_div},
 		{NULL, NULL}
 	};
 
