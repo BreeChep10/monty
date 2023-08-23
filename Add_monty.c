@@ -13,8 +13,10 @@ void monty_add(stack_t **head, unsigned int line_number)
 		free_stack_t(*head);
 		exit(EXIT_FAILURE);
 	}
-	sum = current->n + current->next->n;
-	current->next->n = sum;
-	*head = current->next;
+	sum = (*head)->n + (*head)->next->n;
+	(*head)->next->n = sum;
+	*head = (*head)->next;
+	(*head)->prev = NULL;
+
 	free(current);
 }
