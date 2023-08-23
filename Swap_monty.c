@@ -4,7 +4,7 @@ void monty_swap(stack_t **head, unsigned int line_number)
 {
 	int current;
 
-	if (!*head)
+	if (!*head || !(*head)->next)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 		fclose(monty.file);
