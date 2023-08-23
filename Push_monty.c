@@ -66,7 +66,21 @@ void monty_push(stack_t **head, unsigned int line_number)
 		exit(EXIT_FAILURE); }
 	n = atoi(monty.second);
 	if (monty.mode == 0)
-		add_dnodeint(head, n);
+		if (add_dnodeint(head, n) == NULL)
+		{
+			fprint(stderr, "Error: malloc failed");
+			fclose(monty.file);
+			free(monty.Getline);
+			free_stack_t(head);
+			exit(EXIT_FAILURE);
+		}
 	else
-		add_dnodeint_end(head, n);
+		if (add_dnodeint_end(head, n); == NULL)
+		{
+			fprint(stderr, "Error: malloc failed");
+			fclose(monty.file);
+			free(monty.Getline);
+			free_stack_t(head);
+			exit(EXIT_FAILURE);
+		}
 }
