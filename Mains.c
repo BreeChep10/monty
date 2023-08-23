@@ -10,6 +10,7 @@ int main(int argc, char **argv)
 	ssize_t reads = 1;
 	size_t index = 0;
 	char *store = NULL;
+	stack_t *head = NULL;
 
 	if (argc != 2)
 	{
@@ -32,7 +33,7 @@ int main(int argc, char **argv)
 		monty.count = count;
 		if (reads > 0)
 		{
-			handler(store, file, count);
+			handler(store, file, count, &head);
 		}
 	}
 	free(store);

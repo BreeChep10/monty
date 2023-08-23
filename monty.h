@@ -55,7 +55,7 @@ typedef struct swervo_s
 
 extern swervo_t monty;
 
-int handler(char *store, FILE *file, unsigned int count);
+int handler(char *store, FILE *file, unsigned int count, stack_t **head);
 int execute(stack_t **head, unsigned int count);
 void free_stack_t(stack_t *head);
 stack_t *add_dnodeint(stack_t **head, const int n);

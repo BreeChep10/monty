@@ -1,27 +1,25 @@
 #include "monty.h"
 
 
-int handler(char *statement, FILE *file, unsigned int count)
+int handler(char *statement, FILE *file, unsigned int count, stack_t **head)
 {
 
-	stack_t *head;
 	char *command;
 
-	head = NULL;
 	command = strtok(statement, " \n\t");
 	if (command && command[0] == '#')
 	{
 		return (0);
 	}
-	monty.head = &head;
+	monty.head = head;
 	monty.first = command;
 	monty.second = strtok(NULL, " \n\t");
 
-	if (execute(&head, count) == -1)
+	if (execute(head, count) == -1)
 	{
 		fclose(file);
 		free(statement);
-		free_stack_t(head);
+		free_stack_t(*head);
 		exit(EXIT_FAILURE);
 	}
 	return (0);
@@ -100,7 +98,7 @@ void check_second(void)
 {
 	char *string = monty.second;
 	int j = 0;
-	int flag;
+	int flag = 0;
 
 	if (string[0] == '-')
 			j++;
