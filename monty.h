@@ -55,6 +55,11 @@ extern swervo_t monty;
 int handler(char *store, FILE *file, unsigned int count);
 int execute(stack_t **head, unsigned int count);
 void free_stack_t(stack_t *head);
+stack_t *add_dnodeint(stack_t **head, const int n);
+stack_t *add_dnodeint_end(stack_t **head, const int n);
+
+
+void monty_push(stack_t **head, unsigned int line_number);
 
 
 

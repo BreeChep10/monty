@@ -32,7 +32,10 @@ int handler(char *statement, FILE *file, unsigned int count)
 int execute(stack_t **head, unsigned int count)
 {
 	instruction_t opst[] = {
-	/*	{"push", f_push},
+		{"push", monty_push},
+		{NULL, NULL}
+	};
+	/*
 		{"pall", f_pall},
 		{"pint", f_pint},
 		{"pop", f_pop},
@@ -48,9 +51,9 @@ int execute(stack_t **head, unsigned int count)
 		{"rotl", f_rotl},
 		{"rotr", f_rotr},
 		{"queue", f_queue},
-		{"stack", f_stack}*/
+		{"stack", f_stack}
 		{NULL, NULL}
-	};
+		};*/
 
 	int i;
 
@@ -82,23 +85,3 @@ void free_stack_t(stack_t *head)
 		free(current);
 	}
 }
-/*{
-	stack_t *h, *next;
-
-	if (head)
-	{
-		h = head;
-
-		while (h->prev)
-		{
-			h = h->prev;
-		}
-
-		while (next)
-		{
-			next = h->next;
-			free(h);
-			h = next;
-		}
-	}
-}*/
