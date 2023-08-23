@@ -8,6 +8,7 @@ int handler(char *statement, FILE *file, unsigned int count, stack_t **head)
 		{"pall", monty_pall},
 		{"pint", monty_pint},
 		{"pop", monty_pop},
+		{"swap", monty_swap},
 		{NULL, NULL}
 	};
 
