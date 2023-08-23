@@ -15,7 +15,7 @@ void monty_div(stack_t **head, unsigned int num)
 
 	if (i < 2)
 	{
-		fprintf(stderr, "L%d: can't div, stack too short", num);
+		fprintf(stderr, "L%d: can't div, stack too short\n", num);
 		fclose(monty.file);
 		free(monty.Getline);
 		free_stack_t(*head);
@@ -24,7 +24,7 @@ void monty_div(stack_t **head, unsigned int num)
 
 	if ((*head)->n == 0)
 	{
-		fprintf(stderr, "L%d: can't div, division by zero", num);
+		fprintf(stderr, "L%d: can't div, division by zero\", num);
 		fclose(monty.file);
 		free(monty.Getline);
 		free_stack_t(*head);
@@ -36,5 +36,4 @@ void monty_div(stack_t **head, unsigned int num)
 	curr->next->n = total;
 	*head = (*head)->next;
 	free(curr);
-	(*head)->prev = NULL;
 }
