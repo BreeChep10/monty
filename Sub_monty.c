@@ -1,10 +1,12 @@
 #include "monty.h"
+
 /**
  *monty_sub - subtracts the second from the fist element
  *@head: the head of the linked list
  *@line_number: line number
  *Return: nothing
  */
+
 void monty_sub(stack_t **head, unsigned int line_number)
 {
 	stack_t *current = *head;
@@ -16,10 +18,12 @@ void monty_sub(stack_t **head, unsigned int line_number)
 		fclose(monty.file);
 		free(monty.Getline);
 		free_stack_t(*head);
+
 		exit(EXIT_FAILURE);
 	}
 
 	sub = (*head)->next->n - (*head)->n;
+
 	(*head)->next->n = sub;
 	(*head)->prev = NULL;
 	*head = (*head)->next;

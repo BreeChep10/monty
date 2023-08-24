@@ -2,7 +2,7 @@
 /**
  *monty_push - pushes a new data to the stack
  *@head: the head of the linked list
- *line_number: the line number
+ *@line_number: the line number
  *Return: nothing
  */
 void monty_push(stack_t **head, unsigned int line_number)
@@ -20,9 +20,7 @@ void monty_push(stack_t **head, unsigned int line_number)
 		if (flag == 1)
 		{ fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			fclose(monty.file), free(monty.Getline);
-			free_stack_t(*head);
-
-			exit(EXIT_FAILURE); }}
+			free_stack_t(*head), exit(EXIT_FAILURE); }}
 	else
 	{ fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		fclose(monty.file), free(monty.Getline), free_stack_t(*head);
@@ -35,9 +33,7 @@ void monty_push(stack_t **head, unsigned int line_number)
 		{
 			fprintf(stderr, "Error: malloc failed");
 			fclose(monty.file), free(monty.Getline);
-			free_stack_t(*head);
-
-			exit(EXIT_FAILURE);
+			free_stack_t(*head), exit(EXIT_FAILURE);
 		}
 	}
 	else
@@ -46,8 +42,7 @@ void monty_push(stack_t **head, unsigned int line_number)
 		{
 			fprintf(stderr, "Error: malloc failed");
 			fclose(monty.file), free(monty.Getline);
-			free_stack_t(*head);
-			exit(EXIT_FAILURE);
+			free_stack_t(*head), exit(EXIT_FAILURE);
 		}
 	}
 }
