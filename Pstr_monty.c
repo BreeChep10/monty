@@ -19,7 +19,7 @@ void monty_pstr(stack_t **head, unsigned int line_number)
 			break;
 		else
 		{
-			printf("%C", current->n);
+			printf("%c", current->n);
 			current = current->next;
 		}
 	}
