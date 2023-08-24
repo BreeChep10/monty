@@ -9,9 +9,9 @@ void monty_pstr(stack_t **head, unsigned int line_number)
 	if (!*head)
 	{
 		printf("\n");
-/*		fclose(monty.file);
+		fclose(monty.file);
 		free(monty.Getline);
-		free_stack_t(*head);*/
+		free_stack_t(*head);
 	}
 	while (current)
 	{
