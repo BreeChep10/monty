@@ -24,7 +24,7 @@ void monty_div(stack_t **head, unsigned int num)
 
 	if ((*head)->n == 0)
 	{
-		fprintf(stderr, "L%d: can't div, division by zero\n", num);
+		fprintf(stderr, "L%d: division by zero\n", num);
 		fclose(monty.file);
 		free(monty.Getline);
 		free_stack_t(*head);
