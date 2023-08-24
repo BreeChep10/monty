@@ -17,6 +17,7 @@ int handler(char *statement, FILE *file, unsigned int count, stack_t **head)
 		{"mod", monty_mod},
 		{"pchar", monty_pchar},
 		{"pstr", monty_pstr},
+		{"rotr", monty_rotr},
 		{NULL, NULL}
 	};
 	char *command;
