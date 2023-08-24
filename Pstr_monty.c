@@ -12,6 +12,7 @@ void monty_pstr(stack_t **head, unsigned int line_number)
 		fclose(monty.file);
 		free(monty.Getline);
 		free_stack_t(*head);
+		return;
 	}
 	while (current)
 	{
