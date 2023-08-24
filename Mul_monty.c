@@ -13,8 +13,8 @@ void monty_mul(stack_t **head, unsigned int line_number)
 		free_stack_t(*head);
 		exit(EXIT_FAILURE);
 	}
-	mul = (*head)->n * (*head)->next->n;
-	(*head)->next->n = mul;
-	*head = (*head)->next;
+	mul = current->n * current->next->n;
+	current->next->n = mul;
+	*head = current->next;
 	free(current);
 }
