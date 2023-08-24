@@ -21,10 +21,13 @@ int handler(char *statement, FILE *file, unsigned int count, stack_t **head)
 	int i = 0;
 
 	command = strtok(statement, " \n\t");
-	if (command && command[0] == '#')
+	for (i = 0;command && command[i]; i++)
 	{
-		return (0);
+		if (command[i] == '#')
+		command[i] = '\0';
 	}
+	if (!command)
+		return (0);
 	monty.head = head;
 	monty.first = command;
 	monty.second = strtok(NULL, " \n\t");
