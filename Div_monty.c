@@ -34,6 +34,6 @@ void monty_div(stack_t **head, unsigned int num)
 	curr = *head;
 	total = curr->next->n / curr->n;
 	curr->next->n = total;
-	*head = (*head)->next;
+	*head = curr->next;
 	free(curr);
 }
