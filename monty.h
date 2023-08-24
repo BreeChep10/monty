@@ -73,11 +73,11 @@ void monty_mul(stack_t **head, unsigned int line_number);
 void monty_mod(stack_t **head, unsigned int line_number);
 void monty_pchar(stack_t **head, unsigned int line_number);
 void monty_pstr(stack_t **head, unsigned int line_number);
-void check_second(void);
+void monty_rotl(stack_t **head, unsigned int line_number);
 void monty_div(stack_t **head, unsigned int num);
-char *hash(char *buffer);
 void monty_rotr(stack_t **head, unsigned int num);
-
+void check_second(void);
+char *hash(char *buffer);
 
 
 #endif /*BREE<$$>LEE*/
