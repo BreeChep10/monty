@@ -1,6 +1,0 @@
-#include "monty.h"
-
-
-void monty_rotr(stack_t **head, unsigned int num)
-{
-	
