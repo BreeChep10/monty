@@ -19,7 +19,6 @@ int handler(char *statement, FILE *file, unsigned int count, stack_t **head)
 		{"pstr", monty_pstr},
 		{NULL, NULL}
 	};
-
 	char *command;
 	int i = 0;
 
