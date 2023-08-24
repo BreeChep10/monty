@@ -22,8 +22,8 @@ int handler(char *statement, FILE *file, unsigned int count, stack_t **head)
 	char *command;
 	int i = 0;
 
+	statement = hash(statement);
 	command = strtok(statement, " \n\t");
-	command = hash(command);
 	if (!command)
 		return (0);
 	i = 0, monty.head = head, monty.first = command;
