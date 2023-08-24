@@ -12,11 +12,10 @@ void monty_pstr(stack_t **head, unsigned int line_number)
 		fclose(monty.file);
 		free(monty.Getline);
 		free_stack_t(*head);
+		return;
 	}
-	while (current)
+	while (current && current->n > 0 && current->n <= 127)
 	{
-		if (current->n <= 0 || current->n > 127)
-			break;
 		printf("%c", current->n);
 		current = current->next;
 	}
