@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ *monty_add - adds the first two elements
+ *@head: the head of the linked list
+ *@line_number: the line counter
+ *Return: nothing
+ */
 void monty_add(stack_t **head, unsigned int line_number)
 {
 	stack_t *current = *head;
