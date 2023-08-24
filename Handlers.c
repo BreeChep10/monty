@@ -52,30 +52,16 @@ int handler(char *statement, FILE *file, unsigned int count, stack_t **head)
 
 char *hash(char *buffer)
 {
-	int i;
-	bool quotes = false;
+	int i = 0;
 
-	if (buffer[0] == '#')
+	while (buffer[i] != ' ' && buffer[i] != '\t')
 	{
-		free(buffer);
-		return (NULL);
+		i++;
 	}
 
-	else
+	if (buffer[i] == '#')
 	{
-		for (i = 0; buffer[i]; i++)
-		{
-			if (buffer[i] == 34)
-			{
-				quotes = !quotes;
-			}
-
-			if (!quotes && buffer[i] == '#' && buffer[i - 1] == ' ')
-			{
-				buffer[i] = '\0';
-				break;
-			}
-		}
+		return (NULL);
 	}
 
 	return (buffer);
