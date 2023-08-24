@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+ *monty_mod - does a mod of the first two elements
+ *@head: the head of the linked list
+ *@line_number: the line number
+ *Return: nothing
+ */
 void monty_mod(stack_t **head, unsigned int line_number)
 {
 	stack_t *current = *head;
@@ -11,6 +16,7 @@ void monty_mod(stack_t **head, unsigned int line_number)
 		fclose(monty.file);
 		free(monty.Getline);
 		free_stack_t(*head);
+
 		exit(EXIT_FAILURE);
 	}
 
@@ -20,6 +26,7 @@ void monty_mod(stack_t **head, unsigned int line_number)
 		fclose(monty.file);
 		free(monty.Getline);
 		free_stack_t(*head);
+
 		exit(EXIT_FAILURE);
 	}
 

@@ -1,8 +1,12 @@
 #include "monty.h"
 #include <stdio.h>
-
 swervo_t monty = {NULL, NULL, NULL, 0, 0, NULL, NULL, NULL};
-
+/**
+ *main - entry point
+ *@argc: the arguement count
+ *@argv: the argument vector
+ *Return: 0 on success
+ */
 int main(int argc, char **argv)
 {
 	FILE *file;

@@ -42,6 +42,19 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct swervo_s - global variable struct
+ * @tink: tinker signature
+ * @first: the first tokenized word
+ * @second: the second tokenized word
+ * @mode: determines whether queue or stack
+ * @count: the line number
+ * @head: the head of the linked list
+ * @file: the input file
+ * @Getline: a lin ein the input file
+ *
+ * Description: holds essential variables to be used during runtime
+ */
 typedef struct swervo_s
 {
 	char *tink;

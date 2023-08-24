@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+ *monty_swap - swaps the first and the second nuber
+ *@head: the head of the linked list
+ *@line_number: the line number
+ *Return: nothing
+ */
 void monty_swap(stack_t **head, unsigned int line_number)
 {
 	int current;
@@ -10,6 +15,7 @@ void monty_swap(stack_t **head, unsigned int line_number)
 		fclose(monty.file);
 		free(monty.Getline);
 		free_stack_t(*head);
+
 		exit(EXIT_FAILURE);
 	}
 
