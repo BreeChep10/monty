@@ -8,6 +8,7 @@
 #include <fcntl.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdbool.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -74,6 +75,7 @@ void monty_pchar(stack_t **head, unsigned int line_number);
 void monty_pstr(stack_t **head, unsigned int line_number);
 void check_second(void);
 void monty_div(stack_t **head, unsigned int num);
+char *hash(char *buffer);
 
 
 
