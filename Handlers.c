@@ -24,14 +24,12 @@ int handler(char *statement, FILE *file, unsigned int count, stack_t **head)
 	for (i = 0;command && command[i]; i++)
 	{
 		if (command[i] == '#')
-		command[i] = '\0';
+			command[i] = '\0';
 	}
 	if (!command)
 		return (0);
-	monty.head = head;
-	monty.first = command;
+	i = 0, monty.head = head, monty.first = command;
 	monty.second = strtok(NULL, " \n\t");
-
 	while (opst[i].opcode && command)
 	{
 		if (strcmp(command, opst[i].opcode) == 0)
