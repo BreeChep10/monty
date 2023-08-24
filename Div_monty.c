@@ -1,9 +1,16 @@
 #include "monty.h"
 
+/**
+ *monty_div - divides the second from the first
+ *@head: the head of the list
+ *@num: the line number
+ *Return: nothing
+ */
 
 void monty_div(stack_t **head, unsigned int num)
 {
-	int total = 0, i = 0;
+	int total = 0;
+	int i = 0;
 	stack_t *curr = *head;
 
 
@@ -19,6 +26,7 @@ void monty_div(stack_t **head, unsigned int num)
 		fclose(monty.file);
 		free(monty.Getline);
 		free_stack_t(*head);
+
 		exit(EXIT_FAILURE);
 	}
 
@@ -29,6 +37,7 @@ void monty_div(stack_t **head, unsigned int num)
 		fclose(monty.file);
 		free(monty.Getline);
 		free_stack_t(*head);
+
 		exit(EXIT_FAILURE);
 	}
 
