@@ -22,7 +22,8 @@ void monty_div(stack_t **head, unsigned int num)
 		exit(EXIT_FAILURE);
 	}
 
-	if ((*head)->n == 0)
+	curr = *head;
+	if (curr->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", num);
 		fclose(monty.file);
@@ -31,9 +32,9 @@ void monty_div(stack_t **head, unsigned int num)
 		exit(EXIT_FAILURE);
 	}
 
-	curr = *head;
 	total = curr->next->n / curr->n;
 	curr->next->n = total;
 	*head = curr->next;
+	(*head)->prev = NULL;
 	free(curr);
 }
