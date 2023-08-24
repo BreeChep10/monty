@@ -5,7 +5,7 @@ void monty_mul(stack_t **head, unsigned int line_number)
 	stack_t *current = *head;
 	int mul;
 
-	if (!*head || !(*head)->next)
+	if (!(*head)->next || !(*head)->next->next)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 		fclose(monty.file);
