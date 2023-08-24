@@ -6,7 +6,7 @@ int handler(char *statement, FILE *file, unsigned int count, stack_t **head)
 	instruction_t opst[] = {
 		{"push", monty_push},
 		{"pall", monty_pall},
-		/*{"pint", monty_pint},
+		{"pint", monty_pint},
 		{"pop", monty_pop},
 		{"swap", monty_swap},
 		{"add", monty_add},
@@ -16,19 +16,14 @@ int handler(char *statement, FILE *file, unsigned int count, stack_t **head)
 		{"mul", monty_mul},
 		{"mod", monty_mod},
 		{"pchar", monty_pchar},
-		{"pstr", monty_pstr},*/
+		{"pstr", monty_pstr},
 		{NULL, NULL}
 	};
 	char *command;
 	int i = 0;
 
 	command = strtok(statement, " \n\t");
-	for (i = 0;command && command[i]; i++)
-	{
-		if (command[i] == '#')
-			command[i] = '\0';
-	}
-	if (!command)
+	if (command && command[0] == '#')
 		return (0);
 	i = 0, monty.head = head, monty.first = command;
 	monty.second = strtok(NULL, " \n\t");
