@@ -23,9 +23,9 @@ int handler(char *statement, FILE *file, unsigned int count, stack_t **head)
 	int i = 0;
 
 	statement = hash(statement);
-	command = strtok(statement, " \n\t");
-	if (!command)
+	if (!statement)
 		return (0);
+	command = strtok(statement, " \n\t");
 	i = 0, monty.head = head, monty.first = command;
 	monty.second = strtok(NULL, " \n\t");
 	while (opst[i].opcode && command)
