@@ -10,7 +10,7 @@ void monty_rotr(stack_t **head, unsigned int num)
 	prev = NULL;
 
 
-	if (*head && (*head)->next)
+	if (*head && (*head)->next != NULL)
 	{
 		while (cp)
 		{
